@@ -1,0 +1,18 @@
+---
+description: Always push site updates to GitHub so Pages redeploys automatically
+alwaysApply: true
+---
+
+# Auto push & deploy
+
+After any change to this static site (HTML/CSS/JS/assets/config), finish by deploying:
+
+1. Commit the relevant files.
+2. Push to `origin` `main` (`https://github.com/AAAA-web-deploy/GROKIUS.git`).
+3. GitHub Pages redeploys via `.github/workflows/deploy-pages.yml` on every push to `main`.
+
+Prefer: `.\deploy.ps1` or an equivalent `git add` / `commit` / `push` sequence.
+
+Do not ask whether to push when the user asked for a site update — push and confirm the live URL: https://aaaa-web-deploy.github.io/GROKIUS/
+
+Use commit identity via `-c user.name=AAAA-web-deploy -c user.email=AAAA-web-deploy@users.noreply.github.com` if needed. Do not edit global git config.
