@@ -42,6 +42,28 @@
     });
   }
 
+  const burger = document.querySelector('.menu-toggle');
+  const mobileNav = document.querySelector('.mobile-links');
+  if(burger && mobileNav){
+    const closeMenu = () => {
+      mobileNav.classList.remove('open');
+      mobileNav.hidden = true;
+      burger.setAttribute('aria-expanded', 'false');
+    };
+    const openMenu = () => {
+      mobileNav.hidden = false;
+      mobileNav.classList.add('open');
+      burger.setAttribute('aria-expanded', 'true');
+    };
+    closeMenu();
+    burger.setAttribute('aria-expanded', 'false');
+    burger.addEventListener('click', () => {
+      if (mobileNav.classList.contains('open')) closeMenu();
+      else openMenu();
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  }
+
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
