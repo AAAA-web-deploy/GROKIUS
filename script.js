@@ -42,12 +42,6 @@
     });
   }
 
-  const burger = document.querySelector('.menu-toggle');
-  const mobileNav = document.querySelector('.mobile-links');
-  if(burger && mobileNav){
-    burger.addEventListener('click', ()=> mobileNav.classList.toggle('open'));
-  }
-
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
